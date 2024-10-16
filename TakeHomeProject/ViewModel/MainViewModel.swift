@@ -19,8 +19,9 @@ class MainViewModel: ObservableObject {
         case reloading
     }
     
-    enum SortBy {
-        case cuisine, name
+    enum SortBy: String, CaseIterable {
+        case cuisine = "Cuisine"
+        case name = "Name"
     }
     
     struct ListSection {
