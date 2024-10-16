@@ -14,6 +14,9 @@
 		EE287B8D2CC00F18001F12EA /* UrlSessionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B8C2CC00F18001F12EA /* UrlSessionLoader.swift */; };
 		EE287B902CC00FBA001F12EA /* UrlSessionLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B8F2CC00FBA001F12EA /* UrlSessionLoaderTests.swift */; };
 		EE287B942CC06251001F12EA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B932CC06249001F12EA /* MainViewModel.swift */; };
+		EE287B962CC06D7C001F12EA /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B952CC06D7C001F12EA /* MainViewModelTests.swift */; };
+		EE287B982CC06E15001F12EA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B972CC06DFB001F12EA /* DataManager.swift */; };
+		EE287B9D2CC07242001F12EA /* PredictableLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B9B2CC07211001F12EA /* PredictableLoader.swift */; };
 		EE81CC7C2CBFEEB50022240B /* TakeHomeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */; };
 		EE81CC7E2CBFEEB50022240B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CC7D2CBFEEB50022240B /* ContentView.swift */; };
 		EE81CC802CBFEEB60022240B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE81CC7F2CBFEEB60022240B /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		EE287B8C2CC00F18001F12EA /* UrlSessionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionLoader.swift; sourceTree = "<group>"; };
 		EE287B8F2CC00FBA001F12EA /* UrlSessionLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionLoaderTests.swift; sourceTree = "<group>"; };
 		EE287B932CC06249001F12EA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		EE287B952CC06D7C001F12EA /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		EE287B972CC06DFB001F12EA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EE287B9B2CC07211001F12EA /* PredictableLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictableLoader.swift; sourceTree = "<group>"; };
 		EE81CC782CBFEEB50022240B /* TakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeHomeProjectApp.swift; sourceTree = "<group>"; };
 		EE81CC7D2CBFEEB50022240B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 		EE287B8E2CC00F37001F12EA /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
+				EE287B9B2CC07211001F12EA /* PredictableLoader.swift */,
+				EE287B972CC06DFB001F12EA /* DataManager.swift */,
 				EE287B8C2CC00F18001F12EA /* UrlSessionLoader.swift */,
 				EE287B8A2CC0057F001F12EA /* UrlLoader.swift */,
 			);
@@ -137,6 +145,7 @@
 				EE287B822CBFF52B001F12EA /* RecipeDecodingTests.swift */,
 				EE287B862CC00258001F12EA /* RecipeResponseDecodingTests.swift */,
 				EE287B8F2CC00FBA001F12EA /* UrlSessionLoaderTests.swift */,
+				EE287B952CC06D7C001F12EA /* MainViewModelTests.swift */,
 			);
 			path = TakeHomeProjectTests;
 			sourceTree = "<group>";
@@ -250,7 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE287B9D2CC07242001F12EA /* PredictableLoader.swift in Sources */,
 				EE287B942CC06251001F12EA /* MainViewModel.swift in Sources */,
+				EE287B982CC06E15001F12EA /* DataManager.swift in Sources */,
 				EE81CCA72CBFEF0D0022240B /* Recipe.swift in Sources */,
 				EE287B8D2CC00F18001F12EA /* UrlSessionLoader.swift in Sources */,
 				EE287B852CC00152001F12EA /* RecipeResonse.swift in Sources */,
@@ -267,6 +278,7 @@
 				EE287B872CC00258001F12EA /* RecipeResponseDecodingTests.swift in Sources */,
 				EE287B832CBFF52B001F12EA /* RecipeDecodingTests.swift in Sources */,
 				EE287B902CC00FBA001F12EA /* UrlSessionLoaderTests.swift in Sources */,
+				EE287B962CC06D7C001F12EA /* MainViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

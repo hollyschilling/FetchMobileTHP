@@ -35,14 +35,6 @@ struct UrlSessionLoader: UrlLoader {
         self.defaultTimeout = defaultTimeout
     }
     
-    func fetchAsync(url: URL) async throws -> Data {
-        try await withCheckedThrowingContinuation { continuation in
-            fetch(url: url) { result in
-                continuation.resume(with: result)
-            }
-        }
-    }
-
     func fetchAsync(request: URLRequest) async throws -> Data {
         try await withCheckedThrowingContinuation { continuation in
             fetch(request: request) { result in

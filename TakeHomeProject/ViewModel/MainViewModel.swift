@@ -8,9 +8,7 @@
 import Foundation
 import SwiftUICore
 
-let contentUrl = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")!
-
-class ListViewModel: ObservableObject {
+class MainViewModel: ObservableObject {
     
     enum State {
         case none
@@ -35,7 +33,15 @@ class ListViewModel: ObservableObject {
     var state = State.none
     
     @Published
-    var sorting = SortBy.name
+    var sorting = SortBy.name {
+        didSet {
+            if sorting == .name {
+                sections = [ListSection(heading: "All Recipes", recipes: recipies)]
+            } else {
+                sections = Self.buildSections(recipes: recipies, keyPath: \.cuisine)
+            }
+        }
+    }
     
     @Published
     var sections: [ListSection] = []
@@ -43,10 +49,12 @@ class ListViewModel: ObservableObject {
     @Published
     var error: (any Error)?
 
-    let loader: UrlLoader
+    private var recipies: [Recipe] = []
     
-    init(loader: UrlLoader) {
-        self.loader = loader
+    let dataManager: DataManager
+    
+    init(dataManager: DataManager) {
+        self.dataManager = dataManager
     }
     
     @MainActor
@@ -58,32 +66,31 @@ class ListViewModel: ObservableObject {
         self.error = error
     }
     
-    func beginLoad() {
-        
-        Task {
-            await self.setValues(state: state == .none ? .loading : .reloading)
-            do {
-                let response: RecipeResponse = try await self.loader.fetchJsonAsync(url: contentUrl)
+    func loadAsync() async {
+        await self.setValues(state: state == .none ? .loading : .reloading)
+        do {
+            let recipes = try await self.dataManager.loadRecipes()
+            let sortedRecipes = recipes.sorted { $0.name < $1.name }
 
-                guard response.recipes.count > 0  else {
-                    await setValues(state: .empty, sections: [])
-                    return
-                }
-
-                let sortedRecipes = response.recipes.sorted { $0.name < $1.name }
-                switch self.sorting {
-                case .cuisine:
-                    let sections = Self.buildSections(recipes: sortedRecipes, keyPath: \.cuisine)
-                    await self.setValues(state: .loaded, sections: sections)
-
-                case .name:
-                    let singleSection = ListSection(heading: "All Recipes", recipes: sortedRecipes)
-                    await self.setValues(state: .loaded, sections: [singleSection])
-                }
+            self.recipies = sortedRecipes
+            
+            guard recipes.count > 0  else {
+                await setValues(state: .empty, sections: [])
+                return
             }
-            catch {
-                await self.setValues(state: .error, sections: [], error: error)
+
+            switch self.sorting {
+            case .cuisine:
+                let sections = Self.buildSections(recipes: sortedRecipes, keyPath: \.cuisine)
+                await self.setValues(state: .loaded, sections: sections)
+
+            case .name:
+                let singleSection = ListSection(heading: "All Recipes", recipes: sortedRecipes)
+                await self.setValues(state: .loaded, sections: [singleSection])
             }
+        }
+        catch {
+            await self.setValues(state: .error, sections: [], error: error)
         }
     }
     
