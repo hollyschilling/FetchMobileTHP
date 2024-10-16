@@ -13,6 +13,7 @@
 		EE287B8B2CC0058E001F12EA /* UrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B8A2CC0057F001F12EA /* UrlLoader.swift */; };
 		EE287B8D2CC00F18001F12EA /* UrlSessionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B8C2CC00F18001F12EA /* UrlSessionLoader.swift */; };
 		EE287B902CC00FBA001F12EA /* UrlSessionLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B8F2CC00FBA001F12EA /* UrlSessionLoaderTests.swift */; };
+		EE287B942CC06251001F12EA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B932CC06249001F12EA /* MainViewModel.swift */; };
 		EE81CC7C2CBFEEB50022240B /* TakeHomeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */; };
 		EE81CC7E2CBFEEB50022240B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CC7D2CBFEEB50022240B /* ContentView.swift */; };
 		EE81CC802CBFEEB60022240B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE81CC7F2CBFEEB60022240B /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		EE287B8A2CC0057F001F12EA /* UrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlLoader.swift; sourceTree = "<group>"; };
 		EE287B8C2CC00F18001F12EA /* UrlSessionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionLoader.swift; sourceTree = "<group>"; };
 		EE287B8F2CC00FBA001F12EA /* UrlSessionLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionLoaderTests.swift; sourceTree = "<group>"; };
+		EE287B932CC06249001F12EA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EE81CC782CBFEEB50022240B /* TakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeHomeProjectApp.swift; sourceTree = "<group>"; };
 		EE81CC7D2CBFEEB50022240B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,21 @@
 			path = DataAccess;
 			sourceTree = "<group>";
 		};
+		EE287B912CC061DE001F12EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE287B932CC06249001F12EA /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE287B922CC061E6001F12EA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		EE81CC6F2CBFEEB50022240B = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +111,8 @@
 		EE81CC7A2CBFEEB50022240B /* TakeHomeProject */ = {
 			isa = PBXGroup;
 			children = (
+				EE287B922CC061E6001F12EA /* Cells */,
+				EE287B912CC061DE001F12EA /* ViewModel */,
 				EE287B8E2CC00F37001F12EA /* DataAccess */,
 				EE81CCA52CBFEEF90022240B /* Models */,
 				EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */,
@@ -231,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE287B942CC06251001F12EA /* MainViewModel.swift in Sources */,
 				EE81CCA72CBFEF0D0022240B /* Recipe.swift in Sources */,
 				EE287B8D2CC00F18001F12EA /* UrlSessionLoader.swift in Sources */,
 				EE287B852CC00152001F12EA /* RecipeResonse.swift in Sources */,
