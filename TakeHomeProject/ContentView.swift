@@ -67,7 +67,6 @@ struct ContentView: View {
                 Section(header: Text(section.heading)) {
                     ForEach(section.recipes) { recipe in
                         RecipeListView(recipe: recipe)
-                            .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .headerProminence(.increased)
