@@ -17,6 +17,8 @@
 		EE287B962CC06D7C001F12EA /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B952CC06D7C001F12EA /* MainViewModelTests.swift */; };
 		EE287B982CC06E15001F12EA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B972CC06DFB001F12EA /* DataManager.swift */; };
 		EE287B9D2CC07242001F12EA /* PredictableLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287B9B2CC07211001F12EA /* PredictableLoader.swift */; };
+		EE287BA02CC08795001F12EA /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = EE287B9F2CC08795001F12EA /* NukeUI */; };
+		EE287BA22CC087B6001F12EA /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE287BA12CC087AA001F12EA /* RecipeListView.swift */; };
 		EE81CC7C2CBFEEB50022240B /* TakeHomeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */; };
 		EE81CC7E2CBFEEB50022240B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CC7D2CBFEEB50022240B /* ContentView.swift */; };
 		EE81CC802CBFEEB60022240B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE81CC7F2CBFEEB60022240B /* Assets.xcassets */; };
@@ -45,6 +47,7 @@
 		EE287B952CC06D7C001F12EA /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
 		EE287B972CC06DFB001F12EA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EE287B9B2CC07211001F12EA /* PredictableLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictableLoader.swift; sourceTree = "<group>"; };
+		EE287BA12CC087AA001F12EA /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		EE81CC782CBFEEB50022240B /* TakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeHomeProjectApp.swift; sourceTree = "<group>"; };
 		EE81CC7D2CBFEEB50022240B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE287BA02CC08795001F12EA /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +98,7 @@
 		EE287B922CC061E6001F12EA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EE287BA12CC087AA001F12EA /* RecipeListView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -225,6 +230,9 @@
 				Base,
 			);
 			mainGroup = EE81CC6F2CBFEEB50022240B;
+			packageReferences = (
+				EE287B9E2CC08795001F12EA /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = EE81CC792CBFEEB50022240B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +269,7 @@
 			files = (
 				EE287B9D2CC07242001F12EA /* PredictableLoader.swift in Sources */,
 				EE287B942CC06251001F12EA /* MainViewModel.swift in Sources */,
+				EE287BA22CC087B6001F12EA /* RecipeListView.swift in Sources */,
 				EE287B982CC06E15001F12EA /* DataManager.swift in Sources */,
 				EE81CCA72CBFEF0D0022240B /* Recipe.swift in Sources */,
 				EE287B8D2CC00F18001F12EA /* UrlSessionLoader.swift in Sources */,
@@ -547,6 +556,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE287B9E2CC08795001F12EA /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE287B9F2CC08795001F12EA /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE287B9E2CC08795001F12EA /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE81CC702CBFEEB50022240B /* Project object */;
 }

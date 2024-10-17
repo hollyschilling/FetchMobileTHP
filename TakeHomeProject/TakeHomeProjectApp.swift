@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Nuke
 
 @main
 struct TakeHomeProjectApp: App {
+    
+    init() {
+        ImagePipeline.shared = ImagePipeline(configuration: .withDataCache)
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
