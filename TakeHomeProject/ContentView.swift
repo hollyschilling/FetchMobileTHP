@@ -72,6 +72,11 @@ struct ContentView: View {
                 .headerProminence(.increased)
             }
         }
+        .refreshable {
+            Task {
+                await vm.loadAsync()
+            }
+        }
     }
     
     var empty: some View {
