@@ -41,7 +41,18 @@ struct RecipeListView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 20) {
-                LazyImage(url: recipe.photoUrlSmall)
+                LazyImage(url: recipe.photoUrlSmall) { state in
+                    if let image = state.image {
+                        image.resizable().aspectRatio(contentMode: .fill)
+                    } else if state.error != nil {
+                        Image("SadDoc")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } else {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                    }
+                }
                     .frame(width: 80, height: 80)
                     .cornerRadius(8)
                 VStack(alignment: .leading, spacing: 8) {
