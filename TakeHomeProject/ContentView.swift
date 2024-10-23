@@ -18,6 +18,9 @@ struct ContentView: View {
     @State
     var selected: WebDestination?
     
+    @State
+    var showPostWeb: Bool = false
+    
     init(loader: UrlLoader) {
         let dm = DataManager(urlLoader: loader)
         vm = MainViewModel(dataManager: dm)
@@ -90,6 +93,39 @@ struct ContentView: View {
                 await vm.loadAsync()
             }
         }
+#if true
+        .overlay {
+            ZStack {
+                if showPostWeb {
+                    Rectangle()
+                        .fill(Color(white: 0, opacity: 0.3))
+                        .ignoresSafeArea()
+                        .transition(.opacity)
+                        .onTapGesture {
+                            withAnimation {
+                                showPostWeb = false
+                            }
+                        }
+                    VStack {
+                        Spacer()
+                        ZStack {
+                            TopRoundedRect(cornerRadius: 40)
+                                .fill(Color.white)
+                                .ignoresSafeArea()
+                            postWebContent
+                        }
+                        .frame(height: 240)
+                    }
+                    .transition(.move(edge: .bottom))
+                }
+            }
+        }
+#else
+        .sheet(isPresented: $showPostWeb) {
+            postWebContent
+                .presentationDetents([.fraction(0.25)])
+        }
+#endif
         .fullScreenCover(item: $selected, onDismiss: onWebDismiss) { destination in
             SafariView(url: destination.url)
                 .ignoresSafeArea()
@@ -98,6 +134,9 @@ struct ContentView: View {
     }
     
     func onWebDismiss() {
+        withAnimation(.easeOut(duration: 5)) {
+            showPostWeb = true
+        }
     }
     
     var empty: some View {
@@ -140,6 +179,13 @@ struct ContentView: View {
             ProgressView()
                 .progressViewStyle(.circular)
             Spacer()
+        }
+    }
+    
+    var postWebContent: some View {
+        VStack {
+            Text("I hope that was fun!")
+            Text("Try another recipe.")
         }
     }
 }
