@@ -24,6 +24,7 @@
 		EE81CC802CBFEEB60022240B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE81CC7F2CBFEEB60022240B /* Assets.xcassets */; };
 		EE81CC832CBFEEB60022240B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE81CC822CBFEEB60022240B /* Preview Assets.xcassets */; };
 		EE81CCA72CBFEF0D0022240B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CCA62CBFEF0D0022240B /* Recipe.swift */; };
+		EEE33EBA2CC93E7B00F9C094 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE33EB92CC93E7B00F9C094 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		EE81CC822CBFEEB60022240B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE81CC882CBFEEB70022240B /* TakeHomeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeHomeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE81CCA62CBFEF0D0022240B /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		EEE33EB92CC93E7B00F9C094 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				EE81CCA52CBFEEF90022240B /* Models */,
 				EE81CC7B2CBFEEB50022240B /* TakeHomeProjectApp.swift */,
 				EE81CC7D2CBFEEB50022240B /* ContentView.swift */,
+				EEE33EB92CC93E7B00F9C094 /* SafariView.swift */,
 				EE81CC7F2CBFEEB60022240B /* Assets.xcassets */,
 				EE81CC812CBFEEB60022240B /* Preview Content */,
 			);
@@ -272,6 +275,7 @@
 				EE287BA22CC087B6001F12EA /* RecipeListView.swift in Sources */,
 				EE287B982CC06E15001F12EA /* DataManager.swift in Sources */,
 				EE81CCA72CBFEF0D0022240B /* Recipe.swift in Sources */,
+				EEE33EBA2CC93E7B00F9C094 /* SafariView.swift in Sources */,
 				EE287B8D2CC00F18001F12EA /* UrlSessionLoader.swift in Sources */,
 				EE287B852CC00152001F12EA /* RecipeResonse.swift in Sources */,
 				EE287B8B2CC0058E001F12EA /* UrlLoader.swift in Sources */,
@@ -437,7 +441,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +474,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

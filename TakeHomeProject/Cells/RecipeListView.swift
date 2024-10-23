@@ -33,10 +33,14 @@ struct WebActionStyle: ButtonStyle {
 
 struct RecipeListView: View {
 
-    @Environment(\.openURL)
-    private var openURL
-    
+    enum Action {
+        case source(URL)
+        case youtube(URL)
+    }
+        
     let recipe: Recipe
+    
+    var selectionAction: ((Action) -> Void)?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -65,7 +69,7 @@ struct RecipeListView: View {
             HStack(alignment: .center) {
                 if let url = recipe.youtubeUrl {
                     Button {
-                        openURL(url)
+                        selectionAction?(.youtube(url))
                     } label: {
                         Label("YouTube", systemImage: "play.square.fill")
                     }
@@ -80,7 +84,7 @@ struct RecipeListView: View {
                     .foregroundStyle(Color.gray)
                 if let url = recipe.sourceUrl {
                     Button {
-                        openURL(url)
+                        selectionAction?(.source(url))
                     } label: {
                         Label("Source", systemImage: "network")
                     }

@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.openURL)
+    private var openURL
 
     @ObservedObject
     var vm: MainViewModel
 
+    @State
+    var selected: WebDestination?
+    
     init(loader: UrlLoader) {
         let dm = DataManager(urlLoader: loader)
         vm = MainViewModel(dataManager: dm)
@@ -66,7 +72,14 @@ struct ContentView: View {
             ForEach(vm.sections, id: \.heading) { section in
                 Section(header: Text(section.heading)) {
                     ForEach(section.recipes) { recipe in
-                        RecipeListView(recipe: recipe)
+                        RecipeListView(recipe: recipe) { action in
+                            switch action {
+                            case .source(let url):
+                                selected = WebDestination(title: recipe.name, url: url)
+                            case .youtube(let url):
+                                openURL(url)
+                            }
+                        }
                     }
                 }
                 .headerProminence(.increased)
@@ -77,6 +90,14 @@ struct ContentView: View {
                 await vm.loadAsync()
             }
         }
+        .fullScreenCover(item: $selected, onDismiss: onWebDismiss) { destination in
+            SafariView(url: destination.url)
+                .ignoresSafeArea()
+                .navigationTitle(destination.title)
+        }
+    }
+    
+    func onWebDismiss() {
     }
     
     var empty: some View {
